@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<title></title>
+	<script src="jQuery/jquery-3.2.1.min.js"></script>
+	<style >
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		#box{
+			width: 771px;
+			height: 245px;
+			position: relative;
+			margin: 50px auto;
+			border:1px solid black;
+		}
+		ol li{
+			background:orange;
+			list-style: none;
+			color:white;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			border-radius: 50%;
+			cursor: pointer;
+			float: left;
+			margin-left:10px;
+		}
+		ol{
+			position: absolute;
+			top:200px;
+			margin-left: 10px;
+		}
+
+		.active{
+			background: red;
+		}
+		ol,ul{
+			list-style: none;
+		}
+		ul li{
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="box" >
+		<ul>
+			<li style="display: list-item"><img src=""></li>
+			<li><img src=""></li>
+			<li><img src=""></li>
+			<li><img src=""></li>
+		</ul>
+		<ol>
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ol>
+	</div>
+	<script >
+		var timer=null
+		var k=0;
+		for(var i=0;i<$("ul li").length;i++){
+			$("ul li img")[i].src="img2/"+(i+1)+".jpg"	//将所有的img赋值
+		}	
+
+		 $("ol li").mouseover(function(){
+		 	clearInterval(timer)
+			$(this).addClass("active").siblings().removeClass("active")	//显示选中的
+			$("ul li").eq($(this).index()).fadeIn(300).siblings().fadeOut(300)	//显示选中的图片
+			k=$(this).index()
+		 })
+
+		$("ol li").mouseout(function(){
+			timer=setInterval(function(){
+				if(k>=3){
+					k=0;
+				}else{
+					k++;	
+				}
+				
+				$("ol li").eq(k).addClass("active").siblings().removeClass("active")
+				$("ul li").eq(k).fadeIn(300).siblings().fadeOut(300)
+			},1000)		
+		})
+			
+	</script>
+</body>
+</html>

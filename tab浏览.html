@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<title></title>
+	<script src="jQuery/jquery-3.2.1.min.js"></script>
+	<style >
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+		#box{
+			margin: 50px auto;
+			width: 1000px;
+			height: 515px;
+		}
+		li{
+			display: inline-block;
+			height: 40px;
+			width: 110px;
+			line-height: 40px;
+			text-align: center;
+			border-left: 1px solid gray;
+			border-top:1px solid gray;
+			float: left;
+			cursor: pointer;		
+		}
+		li:last-child{
+			border-right:1px solid gray;
+		}
+		#image{
+			width: 1000px;
+			height: 475px;
+			border:1px solid gray;
+			clear:both;
+		}
+		#tupian{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li>国际大牌</li>
+			<li>国妆名牌</li>
+			<li>清洁用品</li>
+			<li>男士精品</li>
+		</ul>
+		<div id="image">
+			<img id="tupian" >
+		</div>
+
+	</div>
+	<script >
+		$(function(){
+			var liarr=$("li")
+			var arr=["guojidapai","guozhuangmingpin","qingjieyongpin","nanshijingpin"]
+			liarr.mouseover(function(){
+				$("#tupian").attr("src","img/"+arr[$(this).index()]+".jpg")
+				$(this).css("background","gray")
+				//console.log($(this).index())
+			})
+			liarr.mouseout(function(){
+				$(this).css("background","white")
+			})
+
+		})
+	</script>
+</body>
+</html>

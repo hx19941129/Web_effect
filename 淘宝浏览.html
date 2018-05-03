@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		#box{
+			height: 250px;
+			width: 300px;
+			border: 1px solid pink;
+			margin: 40px auto;
+			position: relative;
+		}
+		#tupian{
+			height: 250px;
+			width: 200px;
+			border-left: 1px solid pink;
+			border-right: 1px solid pink;
+			position: absolute;
+			left: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<img id="tupian">
+	</div>
+	<script >
+		var box=document.getElementById("box")
+		var tupian=document.getElementById("tupian")
+		var ziyuan=["女靴","雪地靴","冬裙","呢大衣","毛衣","棉服","女裤","羽绒服","牛仔裤",
+		"女包","男靴","登山鞋","皮带","围巾","皮衣","男毛衣","男棉服","男包"]
+		for(var i =0;i<ziyuan.length;i++){
+				var bbox=document.createElement("div")
+				bbox.style.position="absolute"
+				bbox.style.width="50px"
+				bbox.style.height=250/9+"px"
+				bbox.style.lineHeight=250/9+"px"
+				bbox.innerHTML=ziyuan[i]
+				bbox.style.top=250/9*(i%9)+"px"
+				bbox.style.fontSize="15px"
+				bbox.style.textAlign="center"
+				bbox.style.borderBottom="1px solid pink"
+				bbox.style.cursor="pointer"
+				bbox.setAttribute("index",i)
+				if(i>8){
+					bbox.style.left="250px"
+				}
+				box.appendChild(bbox)
+				bbox.onmouseover=function(){
+					var index=this.getAttribute("index")
+					tupian.src="img2/"+ziyuan[index]+".jpg"
+				}
+		}
+	</script>
+</body>
+</html>

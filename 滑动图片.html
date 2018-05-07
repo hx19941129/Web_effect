@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<title></title>
+	<style >
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+
+		#box{
+			margin: 10px auto;
+			width: 166px;
+			height: 400px;
+		}
+
+		#title{
+			width: 166px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			background:#294A73;
+			color:white;
+			border: 1px solid gray;
+		}
+
+		#up,#down{
+			width: 166px;
+			height: 23px;
+			border: 1px solid gray;
+			cursor: pointer;
+		}
+
+		#up{
+			background:url("img/top.png");
+			border-bottom: 0px;
+		}
+
+		#down{
+			background:url("img/btm.png");
+		}
+
+		#content{
+			width: 166px;
+			height: 324px;
+			border: 1px solid gray;
+			border-bottom: 0px;
+			overflow: hidden;
+			position:relative;
+		}
+		#conImg{
+			position: absolute;
+			top:0;
+			left:0;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="title">滑动图片</div>
+		<div id="up"></div>
+		<div id="content"><img src="img/content.jpg" id="conImg"></div>
+		<div id="down"></div>
+	</div>
+
+	<script >
+		var upbtn=document.getElementById("up")
+		var downbtn=document.getElementById("down")
+		var img=document.getElementById("conImg")
+		var timer=null;
+		upbtn.onmousedown=function(){
+			timer=setInterval(function(){
+				if(img.offsetTop<0){
+				img.style.top=img.offsetTop+5+"px"
+				}
+			},1000/60)
+
+			return false;
+		}
+
+		upbtn.onmouseup=function(){
+			clearInterval(timer)
+		}
+
+		downbtn.onmousedown=function(){
+			timer=setInterval(function(){
+				if(img.offsetTop>-816){
+				img.style.top=img.offsetTop-5+"px"
+				}
+			},1000/60)
+
+			return false;
+		}
+
+		downbtn.onmouseup=function(){
+			clearInterval(timer)
+		}
+
+	</script>
+</body>
+</html>

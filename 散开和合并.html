@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<style >
+	#content{
+		height: 500px;
+		width: 500px;
+		margin: 20px  auto;
+		border: 1px solid black;
+		background: black;
+		text-align: center;
+	}
+
+	img{
+		transition: transform 1s;
+	}
+</style>
+<body>
+	<input type="button" name="" value="散开" id="sankai">
+	<input type="button" name="" value="合并" id="hebing">
+
+	<div id="content">
+		<img src="">
+		<img src="">
+		<img src="">
+		<img src="">
+		<img src="">
+		<img src="">
+		<img src="">
+		<img src="">
+		<img src="">
+	</div>
+</body>
+
+<script >
+	var imgarr=document.querySelectorAll("img")
+	for(var i= 0;i<imgarr.length;i++){
+		imgarr[i].src="img2/shield_1_0"+(i+1)+".png"
+	}
+
+	var sankai=document.querySelector("#sankai")
+	var hebing=document.querySelector("#hebing")
+
+	sankai.onclick=function(){
+		for(var i =0;i<imgarr.length;i++){
+			var L=Math.random()*100-50
+			var H=Math.random()*100-50
+			var rotateRandom=Math.random()*360
+
+			imgarr[i].style.transform="translate("+L+"px,"+H+"px) rotate("+rotateRandom+"deg)"
+		}
+	}
+
+	hebing.onclick=function(){
+		for(var i=0;i<imgarr.length;i++){
+			imgarr[i].style.transform="none"
+		}
+	}
+</script>
+</html>

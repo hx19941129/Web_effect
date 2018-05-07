@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<title>老虎外汇 - TigerWit 直通全球资本市场</title>
+	<link rel="stylesheet" type="text/css" href="网页练习.css">
+</head>
+<body>
+	<div class="daohang">
+		<div class="daohang_content">
+			<div class="daohang_icon">
+				<a href="#">
+				<img src="https://web.tigerwit.com/white_label/tigerwit-logo.png">
+				</a>
+			</div>
+			<div class="daohang_li">
+				<ul>
+					<li class="daohang_lis"><a href="">首页</a>
+					</li>
+					<li class="daohang_lis" ><a href="">复制跟单</a>
+						<ul  style="display: none;">
+							<li>高手跟单</li>
+							<li>定期跟单</li>
+						</ul>
+					</li>
+					<li class="daohang_lis"><a href="">产品介绍</a>
+						<ul style="display: none;">
+							<li>外汇交易</li>
+							<li>原油交易</li>
+							<li>贵金属交易</li>
+							<li>指数差价合约</li>
+						</ul>					
+					</li>
+					<li class="daohang_lis"><a href="">交易指南</a>
+						<ul style="display: none;">
+							<li>复制规则</li>
+							<li>如何选择高手</li>
+							<li>每日汇评</li>
+						</ul>
+					</li>
+					<li class="daohang_lis"><a href="">合作伙伴</a>
+						<ul style="display: none;">
+							<li>代理合作</li>
+							<li>成为高手</li>
+						</ul>
+					</li>
+					<li class="daohang_lis"><a href="">关于老虎外汇</a>
+						<ul style="display: none;">
+							<li>关于老虎外汇</li>
+							<li>精英团队</li> 
+							<li>媒体报道</li>
+						</ul>
+					</li>
+					<li class="daohang_lis"><a href="">下载app</a></li>
+				</ul>
+			</div>
+			<div class="daohang_right">简体中文</div>
+			<div class="daohang_login">登录</div>
+		</div>
+		
+	</div>
+
+	<script >
+		//编写一个获取指定class的元素
+		function getElementClass(classname){
+			var classobj=new Array()	//存放获得的所有元素
+			var classint=0			//数组下标
+			var tags=document.getElementsByTagName("*")
+
+			for(var i in tags){
+				if(tags[i].nodeType==1&&tags[i].getAttribute("class")==classname){
+					classobj[classint]=tags[i]
+					classint++
+				}
+			}
+			return classobj
+		}
+
+		var liArr=getElementClass("daohang_lis")
+		for(var j =1;j<liArr.length-1;j++){
+			(function(j){
+				liArr[j].onmouseover=function(){
+					var child_ul=liArr[j].getElementsByTagName("ul")
+					child_ul[0].style.display="inline"
+				}
+				liArr[j].onmouseleave=function(){
+					var child_ul=liArr[j].getElementsByTagName("ul")
+					child_ul[0].style.display="none"					
+				}
+			})(j);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+.daohang{
+	height: 70px;
+	width: 100%;
+	position: fixed;
+	background: black;
+	opacity: 0.7;
+	
+}
+
+.daohang_content{
+	margin-right: auto;
+    	margin-left: auto;
+    	padding-left: 15px;
+    	padding-right: 15px;
+    	width: 1060px;
+}
+
+.daohang_icon{
+	height: 80px;
+	margin-top:5px;
+	margin-right:20px;
+	float: left;
+}
+
+.daohang_li{
+	float: left;
+}
+
+.daohang_li li{
+	float: left;
+	margin-left: 20px;
+	list-style: none;
+	height: 70px;
+	position: relative;
+	 
+}
+
+.daohang_li li a{
+	display: block;
+	text-decoration: none;
+	color: white;
+	font-size: 17px;
+	font-weight: bold;
+	padding-top: 30px;
+	height: 70px;
+	box-sizing: border-box;
+}
+
+.daohang_li li a:hover{
+	color: yellow;
+	border-bottom:3px solid yellow;
+}
+
+.daohang_right{
+	float: right;
+	color: white;
+	margin-top:30px;
+	height: 30px;
+	cursor: pointer;
+	margin-left: 20px;
+	border-left: 1px solid white;
+	line-height: 30px;
+	padding-left:10px; 
+}
+
+.daohang_login{
+	float: right;
+	background: yellow;
+	margin-top:25px;
+	height: 35px;
+	width: 80px;
+	text-align: center;
+	line-height: 35px;
+	font-size: 15px;
+	cursor: pointer;
+
+}
+
+.daohang_lis li{
+	clear: both;
+	height:35px;
+	background: black;
+	opacity: 0.9;
+	line-height: 35px;
+	font-size: 15px;
+	margin-left: 0px;
+	color:yellow;
+	text-align: left;
+	cursor: pointer;
+	min-width: 100%;
+	white-space: nowrap;
+}
+
+.daohang_lis li:hover{
+	background: yellow;
+	color: black;
+}
+
+.daohang_lis ul{
+	position: absolute;
+	min-width: 100%;
+}
+
+
+
